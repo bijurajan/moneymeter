@@ -1,0 +1,28 @@
+html, body{
+    height:100%;
+}
+
+@media all and (min-width: 750px) {
+    .odometer {
+        font-size: 100px;
+    }
+}
+
+#formInputDiv{
+    height:40%;
+    background-color:#85bb65;
+}
+
+#formContainer{
+    width: 85%;
+    padding-top:15px;
+}
+
+.full-height{
+    height:100%;
+}
+
+#odometer-container{
+    height: 60%;
+    text-align: center;
+}

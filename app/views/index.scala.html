@@ -1,5 +1,24 @@
 @()
 
 @main("Welcome to MoneyMeter") {
-  <h1>Welcome to MoneyMeter!</h1>
+  <div class="container-fluid full-height">
+    <div class="row justify-content-center align-items-center" id="odometer-container">
+        <div class="col-lg-8 col-md-8 col-xs-12">
+          <h1><span id="odometer" class="odometer">123</span></h1>
+        </div>
+    </div>
+    <div class="row" id="formInputDiv">
+        <div class="container-fluid" id="formContainer">
+            <div class="form-group row">
+                <label for="noOfMembers" class="col-sm-8 col-md-4 col-lg-4 pull-right">Number of attendees</label>
+                <input type="text" class="form-control col-sm-4 col-md-4 col-lg-4" id="noOfMembers" placeholder="Enter attendees count">
+            </div>
+            <div class="form-group row">
+                <label for="costPerMember" class="col-sm-8 col-md-4 col-lg-4 pull-right">Average hourly rate/members in $</label>
+                <input type="text" class="form-control col-sm-4 col-md-4 col-lg-4" id="costPerMember" placeholder="Hourly rate $">
+            </div>
+            <button type="submit" class="btn btn-primary">Start The Burn</button>
+        </div>
+    </div>
+  </div>
 }
