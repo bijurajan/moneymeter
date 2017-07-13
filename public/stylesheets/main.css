@@ -2,6 +2,12 @@ html, body{
     height:100%;
 }
 
+body{
+    background-image: url(../images/currency.jpg);
+    background-repeat:no-repeat;
+    background-size:cover
+}
+
 @media all and (min-width: 750px) {
     .odometer {
         font-size: 100px;
