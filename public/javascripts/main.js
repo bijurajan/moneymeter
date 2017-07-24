@@ -7,7 +7,7 @@ var Main = function(){
         od = new Odometer({
             el: el,
             value: 0,
-            format: '(,ddd).dd',
+            format: '(,ddd)',
             theme: 'digital',
             animation: 'count'
         });
@@ -22,8 +22,8 @@ var Main = function(){
         counter+=5;
         var costPerMember = $("#costPerMember").val();
         var noOfMembers = $("#noOfMembers").val();
-        var costPerMemberPerSec = ( costPerMember / 3600 ) * 5;
-        updateMeter(counter * costPerMemberPerSec * noOfMembers);
+        var costPerMemberPerSec = ( costPerMember / 3600 );
+        Main.updateMeter(counter * costPerMemberPerSec * noOfMembers);
     }
 
     return {

@@ -2,6 +2,8 @@ describe('Main', function(){
 
     beforeEach(function(){
         affix('span#odometer [class="odometer"][value="10"]');
+        affix('input#costPerMember[value="100"]');
+        affix('input#noOfMembers[value="10"]');
     });
 
     it('should create an odometer', function(){
@@ -9,7 +11,7 @@ describe('Main', function(){
 
         expect(result.options.value).toEqual(0);
         expect(result.options.el).not.toBeNull();
-        expect(result.options.format).toEqual('(,ddd).dd');
+        expect(result.options.format).toEqual('(,ddd)');
         expect(result.options.theme).toEqual('digital');
         expect(result.options.animation).toEqual('count');
     });
@@ -17,8 +19,15 @@ describe('Main', function(){
     it('should update odometer value', function(){
         var odometer = Main.createOdometer();
 
-        Main.updateMeter(odometer, "12000");
+        Main.updateMeter("12000");
 
         expect(odometer.value).toEqual(12000);
+    });
+
+    it('should increment counter', function(){
+        window.counter = 0;
+        spyOn(Main, 'updateMeter');
+        Main.incrementCount();
+        expect(Main.updateMeter).toHaveBeenCalledWith(1.3888888888888888);
     });
 });
