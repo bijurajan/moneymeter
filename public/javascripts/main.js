@@ -1,11 +1,34 @@
-var el = document.querySelector('.odometer');
+var Main = function(){
 
-od = new Odometer({
-    el: el,
-    value: 0,
-    format: '(,ddd).dd',
-    theme: 'digital',
-    animation: 'count'
-});
+    var od;
 
-od.update(12500);
+    function createOdometer(){
+        var el = document.querySelector('.odometer');
+        od = new Odometer({
+            el: el,
+            value: 0,
+            format: '(,ddd).dd',
+            theme: 'digital',
+            animation: 'count'
+        });
+        return od;
+    }
+
+    function updateMeter(value){
+        od.update(value);
+    }
+
+    function incrementCount(){
+        counter+=5;
+        var costPerMember = $("#costPerMember").val();
+        var noOfMembers = $("#noOfMembers").val();
+        var costPerMemberPerSec = ( costPerMember / 3600 ) * 5;
+        updateMeter(counter * costPerMemberPerSec * noOfMembers);
+    }
+
+    return {
+        createOdometer: createOdometer,
+        updateMeter: updateMeter,
+        incrementCount: incrementCount
+    }
+}();

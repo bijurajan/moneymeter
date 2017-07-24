@@ -22,10 +22,18 @@
          * the page content. *@
         @content
 
-      <script type='text/javascript' src='@routes.Assets.versioned("javascripts/jquery-3.2.1.slim.min.js")'></script>
-      <script type='text/javascript' src='@routes.Assets.versioned("javascripts/tether.min.js")'></script>
-      <script type='text/javascript' src='@routes.Assets.versioned("javascripts/odometer.min.js")'></script>
-      <script type='text/javascript' src='@routes.Assets.versioned("bootstrap/js/bootstrap.min.js")'></script>
-      <script src="@routes.Assets.versioned("javascripts/main.js")" type="text/javascript"></script>
+        <script type='text/javascript' src='@routes.Assets.versioned("javascripts/jquery-3.2.1.slim.min.js")'></script>
+        <script type='text/javascript' src='@routes.Assets.versioned("javascripts/tether.min.js")'></script>
+        <script type='text/javascript' src='@routes.Assets.versioned("javascripts/odometer.min.js")'></script>
+        <script type='text/javascript' src='@routes.Assets.versioned("bootstrap/js/bootstrap.min.js")'></script>
+        <script src="@routes.Assets.versioned("javascripts/main.js")" type="text/javascript"></script>
+        <script type='text/javascript'>
+            Main.createOdometer();
+            var counter = 0;
+            $("#startBurn").click(function() {
+                setInterval(Main.incrementCount, 5000);
+            });
+
+        </script>
     </body>
 </html>
