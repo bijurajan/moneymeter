@@ -19,6 +19,11 @@ body{
     background-color:#85bb65;
 }
 
+#meetingStartedAt, #meetingDuration{
+    background-color: #292b2c;
+    color: #8bf5a5;
+}
+
 #formContainer{
     width: 85%;
     padding-top:15px;

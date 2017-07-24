@@ -23,6 +23,9 @@ var Main = function(){
         var costPerMember = $("#costPerMember").val();
         var noOfMembers = $("#noOfMembers").val();
         var costPerMemberPerSec = ( costPerMember / 3600 );
+        var duration = moment.duration(moment().diff(startTime));
+        var seconds = duration.humanize();
+        $("#meetingDuration").html("Running for " + seconds);
         Main.updateMeter(counter * costPerMemberPerSec * noOfMembers);
     }
 
