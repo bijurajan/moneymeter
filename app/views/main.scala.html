@@ -35,6 +35,9 @@
             $("#startBurn").click(function() {
                 startTime = moment();
                 $("#meetingStartedAt").html("START TIME: "+ startTime.format('MMMM Do YYYY, h:mm:ss a'));
+                $("#noOfMembers").prop("readonly", true);
+                $("#costPerMember").prop("readonly", true);
+                $("#startBurn").prop("readonly", true);
                 setInterval(Main.incrementCount, 5000);
             });
 
