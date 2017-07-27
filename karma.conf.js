@@ -17,6 +17,7 @@ module.exports = function(config) {
     files: [
         'node_modules/jasmine-fixture/dist/jasmine-fixture.js',
         'public/javascripts/jquery-3.2.1.slim.min.js',
+        'public/javascripts/moment.min.js',
         'public/javascripts/tether.min.js',
         'public/javascripts/odometer.js',
         'public/javascripts/main.js',

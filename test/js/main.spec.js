@@ -11,9 +11,8 @@ describe('Main', function(){
 
         expect(result.options.value).toEqual(0);
         expect(result.options.el).not.toBeNull();
-        expect(result.options.format).toEqual('(,ddd)');
+        expect(result.options.format).toEqual('(,ddd).dd');
         expect(result.options.theme).toEqual('digital');
-        expect(result.options.animation).toEqual('count');
     });
 
     it('should update odometer value', function(){
@@ -26,8 +25,9 @@ describe('Main', function(){
 
     it('should increment counter', function(){
         window.counter = 0;
+        window.startTime = moment();
         spyOn(Main, 'updateMeter');
         Main.incrementCount();
-        expect(Main.updateMeter).toHaveBeenCalledWith(1.3888888888888888);
+        expect(Main.updateMeter).toHaveBeenCalledWith(0.2777777777777778);
     });
 });
